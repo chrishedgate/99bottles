@@ -4,12 +4,11 @@ class Bottles
     end
 
     def verses(high, low)
-        current_verse = high
         text = ""
-        while current_verse >= low
-            text += verse(current_verse)
-            text += "\n" unless current_verse == low
-            current_verse = current_verse - 1
+        r = high..low
+        r.first.downto(r.last) do |i|
+            text += verse(i)
+            text += "\n" unless i == r.last
         end
         text
     end
