@@ -4,12 +4,7 @@ class Bottles
     end
 
     def verses(first, last)
-        text = ""
-        first.downto(last) do |i|
-            text += verse(i)
-            text += "\n" unless i == last
-        end
-        text
+        first.downto(last).map {|i| verse(i) }.join("\n")
     end
 
     def verse(number)
