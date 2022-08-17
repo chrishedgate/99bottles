@@ -3,12 +3,12 @@ class Bottles
         verses(99, 0)
     end
 
-    def verses(start, stop)
-        current_verse = start
+    def verses(high, low)
+        current_verse = high
         text = ""
-        while current_verse >= stop
+        while current_verse >= low
             text += verse(current_verse)
-            text += "\n" unless current_verse == stop
+            text += "\n" unless current_verse == low
             current_verse = current_verse - 1
         end
         text
