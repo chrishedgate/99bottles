@@ -3,11 +3,11 @@ class Bottles
         verses(99, 0)
     end
 
-    def verses(high, low)
+    def verses(first, last)
         text = ""
-        high.downto(low) do |i|
+        first.downto(last) do |i|
             text += verse(i)
-            text += "\n" unless i == low
+            text += "\n" unless i == last
         end
         text
     end
