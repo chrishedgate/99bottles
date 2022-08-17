@@ -5,10 +5,9 @@ class Bottles
 
     def verses(high, low)
         text = ""
-        r = high..low
-        r.first.downto(r.last) do |i|
+        high.downto(low) do |i|
             text += verse(i)
-            text += "\n" unless i == r.last
+            text += "\n" unless i == low
         end
         text
     end
